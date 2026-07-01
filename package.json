@@ -1,0 +1,28 @@
+{
+  "name": "flowfi",
+  "version": "1.0.0",
+  "description": "FlowFi - WiFi Monetization Platform for Kenya",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspace=frontend && npm run build --workspace=backend",
+    "install:all": "npm install && npm install --workspace=backend && npm install --workspace=frontend",
+    "seed:demo": "npx ts-node scripts/seed-demo.ts",
+    "dev:next": "next dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "next": "^16.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  }
+}
